@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Available Courses</h2>
+    <div class="course-grid">
+        {% for course in courses %}
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='icons/course.png') }}" alt="Course Icon" class="course-icon">
+                <h3>{{ course.title }}</h3>
+                <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+                <p><strong>Duration:</strong> {{ course.duration }}</p>
+                {% if course.level == "advanced" %}
+                    <p class="warning">
+                        <img src="{{ url_for('static', filename='icons/warning.png') }}" alt="Warning" class="warn-icon">
+                        Advanced Level — Prior experience recommended
+                    </p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

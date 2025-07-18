@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="profile-card">
+        <img src="{{ url_for('static', filename='images/profiles/' ~ user.image) }}" alt="{{ user.name }}" class="profile-img">
+        <h2>{{ user.name }}</h2>
+        <p class="bio">{{ user.bio }}</p>
+        <p class="joined">Joined on {{ user.joined.strftime('%d %b %Y') }}</p>
+        {% if is_new %}
+            <p class="new-user">🆕 Welcome, new user!</p>
+        {% endif %}
+    </div>
+{% endblock %}

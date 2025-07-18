@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    background-color: #fff8f0;
+    margin: 20px;
+    text-align: center;
+}
+header {
+    background-color: #b30000;
+    color: white;
+    padding: 15px;
+}
+.error-box {
+    margin-top: 50px;
+}
+.error-code {
+    font-size: 6em;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+.error-message {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn:hover {
+    background-color: #0066cc;
+}
+footer {
+    margin-top: 40px;
+    color: #666;
+}

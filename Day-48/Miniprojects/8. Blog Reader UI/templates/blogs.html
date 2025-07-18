@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Latest Posts</h2>
+    <div class="blog-grid">
+        {% for blog in blogs %}
+            <div class="blog-card {% if blog.featured %}featured{% endif %}">
+                <img src="{{ url_for('static', filename='images/' ~ blog.image) }}" alt="{{ blog.title }}" class="blog-img">
+                <h3>{{ blog.title }}</h3>
+                <p><em>by {{ blog.author }}</em></p>
+                <p>{{ blog.snippet }}</p>
+                {% if blog.featured %}
+                    <span class="tag">⭐ Featured</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

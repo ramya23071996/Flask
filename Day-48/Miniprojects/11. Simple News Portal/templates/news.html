@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Today's Headlines</h2>
+    <ul class="news-list">
+        {% for item in headlines %}
+            <li class="news-item {{ item.category }}">
+                <strong>{{ item.title }}</strong>
+                <span class="datetime">{{ item.datetime.strftime('%d %b %Y, %I:%M %p') }}</span>
+                {% if item.is_breaking %}
+                    <span class="breaking">🚨 Breaking News</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

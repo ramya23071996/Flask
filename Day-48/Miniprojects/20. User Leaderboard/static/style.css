@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f8ff;
+    margin: 20px;
+    text-align: center;
+}
+header {
+    background-color: #004080;
+    color: white;
+    padding: 15px;
+}
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+.leaderboard-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.user-card {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #aaa;
+}
+.user-card.first-place {
+    border-color: gold;
+    background-color: #fffbe6;
+}
+.badge {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+footer {
+    margin-top: 40px;
+    color: #666;
+}

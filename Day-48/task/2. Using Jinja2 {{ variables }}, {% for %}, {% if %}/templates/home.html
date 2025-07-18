@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Home</title></head>
+<body>
+  <h1>Welcome, {{ username }}</h1>
+
+  {% if logged_in %}
+    <p>Hello {{ username }}, you're logged in!</p>
+  {% else %}
+    <p>Please log in to continue.</p>
+  {% endif %}
+
+  <h2>Skills:</h2>
+  <ul>
+    {% for skill in skills %}
+      <li>{{ loop.index }}. {{ skill }}</li>
+    {% else %}
+      <li>No skills listed.</li>
+    {% endfor %}
+  </ul>
+
+  <p>Today is: {{ current_date.strftime('%A, %d %B %Y') }}</p>
+
+  <p>{{ "Welcome back, " + name }}</p>
+
+  {% if role == "admin" %}
+    <div style="color: red;">Admin Panel Access Granted</div>
+  {% endif %}
+</body>
+</html>

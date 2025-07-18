@@ -1,0 +1,17 @@
+.grade {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.grade-a {
+    background-color: #28a745;
+    color: white;
+}
+.grade-b {
+    background-color: #ffc107;
+    color: black;
+}
+.grade-c {
+    background-color: #dc3545;
+    color: white;
+}

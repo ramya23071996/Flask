@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Today's Weather in {{ weather.location }}</h2>
+
+    <div class="weather-card">
+        <img src="{{ url_for('static', filename='images/' ~ weather.icon) }}" alt="{{ weather.condition }}" width="100">
+        <p>Condition: {{ weather.condition }}</p>
+        <p>Temperature: {{ weather.temperature }}°C</p>
+
+        {% if weather.temperature > 30 %}
+            <p class="alert">🥵 Stay Hydrated!</p>
+        {% endif %}
+    </div>
+
+    <h3>Hourly Temperature</h3>
+    <canvas id="tempChart" width="400" height="200"></canvas>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+{% block scripts %}{% endblock %}
+{% endblock %}

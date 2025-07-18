@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+{% block content %}
+    <h2>Welcome!</h2>
+    <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile Image" width="200">
+    {% if available %}
+        <p class="hire">✅ Available for hire!</p>
+    {% else %}
+        <p class="hire">❌ Not currently available.</p>
+    {% endif %}
+{% endblock %}

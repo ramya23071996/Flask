@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Top Performers</h2>
+    <div class="leaderboard-grid">
+        {% for user in leaderboard %}
+            <div class="user-card {% if loop.first %}first-place{% endif %}">
+                {% if loop.index == 1 %}
+                    <img src="{{ url_for('static', filename='images/gold.png') }}" alt="Gold Badge" class="badge">
+                {% elif loop.index == 2 %}
+                    <img src="{{ url_for('static', filename='images/silver.png') }}" alt="Silver Badge" class="badge">
+                {% elif loop.index == 3 %}
+                    <img src="{{ url_for('static', filename='images/bronze.png') }}" alt="Bronze Badge" class="badge">
+                {% endif %}
+                <h3>#{{ loop.index }} {{ user.name }}</h3>
+                <p>Score: {{ user.score }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

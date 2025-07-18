@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Scores</title></head>
+<body>
+  <h2>Student Scores</h2>
+  <ul>
+    {% for score in scores %}
+      <li>
+        {{ loop.index }}. Score: {{ score }}
+        {% if score > 80 %}
+          <strong style="color: green;">(Excellent)</strong>
+        {% elif score < 50 %}
+          <span style="color: red;">(Needs Improvement)</span>
+        {% endif %}
+      </li>
+    {% else %}
+      <li>No scores available.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

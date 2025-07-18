@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+}
+header {
+    background-color: #444;
+    color: white;
+    padding: 15px;
+}
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+.blog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.blog-card {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #aaa;
+}

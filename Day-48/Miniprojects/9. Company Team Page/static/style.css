@@ -1,0 +1,52 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f8ff;
+    margin: 20px;
+}
+header {
+    background-color: #004080;
+    color: white;
+    padding: 15px;
+}
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.team-card {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #aaa;
+    text-align: center;
+}
+.team-card.lead {
+    border-color: #ff9800;
+    background-color: #fff3e0;
+}
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.tag {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 8px;
+    background-color: #ff9800;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 4px;
+}
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #666;
+}

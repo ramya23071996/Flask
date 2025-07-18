@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+header {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+}
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.movie-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #aaa;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+}
+.poster {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.new-release {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 8px;
+    background-color: #ff4757;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 4px;
+}

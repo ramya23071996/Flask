@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    background-color: #fff8f0;
+    margin: 20px;
+}
+header {
+    background-color: #8b0000;
+    color: white;
+    padding: 15px;
+}
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+.dish-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.dish-card {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #aaa;
+    text-align: center;
+}
+.dish-card.out {
+    opacity: 0.6;
+}
+.dish-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.out-text {
+    color: red;
+    font-weight: bold;
+}
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #666;
+}

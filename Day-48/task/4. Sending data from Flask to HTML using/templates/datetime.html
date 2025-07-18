@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Date & Time{% endblock %}
+{% block content %}
+<h1>Current Date & Time</h1>
+<p>{{ now.strftime('%A, %d %B %Y %I:%M %p') }}</p>
+{% endblock %}
