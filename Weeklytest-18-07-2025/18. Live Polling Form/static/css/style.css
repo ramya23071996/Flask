@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    color: #333;
+}
+
+.vote-message {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.vote-message.yes {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.vote-message.no {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.vote-message.maybe {
+    background-color: #fff3cd;
+    color: #856404;
+}

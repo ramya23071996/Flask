@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Meet {{ name }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h2>Hello, I'm {{ name }}!</h2>
+        <p><strong>Age:</strong> {{ age if age else "Not specified" }}</p>
+        <p><strong>Course:</strong> {{ course if course else "Not specified" }}</p>
+    </div>
+{% endblock %}

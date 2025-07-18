@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category }} News{% endblock %}
+
+{% block content %}
+    <h1>{{ category }} News</h1>
+    <ul>
+        {% for article in articles %}
+            <li>{{ article }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/news/technology">Technology</a> |
+    <a href="/news/sports">Sports</a> |
+    <a href="/news/politics">Politics</a>
+{% endblock %}

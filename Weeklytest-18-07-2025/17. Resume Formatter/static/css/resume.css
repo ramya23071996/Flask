@@ -1,0 +1,41 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    padding: 40px;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.resume h1 {
+    margin-bottom: 5px;
+    font-size: 2rem;
+    color: #222;
+}
+
+.resume h2 {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.resume p {
+    line-height: 1.6;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    .container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+}

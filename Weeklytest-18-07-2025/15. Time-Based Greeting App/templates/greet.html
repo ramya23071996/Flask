@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting</title>
+</head>
+<body>
+    {% if hour is not none %}
+        {% if 5 <= hour < 12 %}
+            <h1>Good Morning!</h1>
+        {% elif 12 <= hour < 18 %}
+            <h1>Good Afternoon!</h1>
+        {% else %}
+            <h1>Good Night!</h1>
+        {% endif %}
+        <p>The hour you entered: {{ hour }}</p>
+    {% else %}
+        <h1>Invalid or missing hour.</h1>
+        <p>Use URL like <code>/greet?hour=9</code></p>
+    {% endif %}
+</body>
+</html>

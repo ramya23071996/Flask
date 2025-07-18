@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Poll</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Live Poll: Do you support online exams?</h1>
+    <form method="POST">
+        <label><input type="radio" name="vote" value="Yes" required> Yes</label><br>
+        <label><input type="radio" name="vote" value="No"> No</label><br>
+        <label><input type="radio" name="vote" value="Maybe"> Maybe</label><br><br>
+        <button type="submit">Submit Vote</button>
+    </form>
+</body>
+</html>

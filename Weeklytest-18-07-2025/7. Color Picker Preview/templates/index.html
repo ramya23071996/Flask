@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .color-box {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 2px solid #000;
+            color : #ffffff
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Picker Preview</h1>
+    <form method="POST">
+        <label for="color">Enter color name or code:</label><br><br>
+        <input type="text" id="color" name="color" placeholder="e.g. red or #ff0000">
+        <br><br>
+        <button type="submit">Show Color</button>
+    </form>
+
+    <div class="color-box"></div>
+    <p>Previewing color: <strong>{{ color }}</strong></p>
+</body>
+</html>

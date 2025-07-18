@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>
+        {% if lang == 'en' %}
+            Hello, {{ name }}!
+        {% elif lang == 'fr' %}
+            Bonjour, {{ name }}!
+        {% elif lang == 'es' %}
+            ¡Hola, {{ name }}!
+        {% elif lang == 'ta' %}
+            வணக்கம், {{ name }}!
+        {% else %}
+            Hello, {{ name }}!
+        {% endif %}
+    </h1>
+{% endblock %}

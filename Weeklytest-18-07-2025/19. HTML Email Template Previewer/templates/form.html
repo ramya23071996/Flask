@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Template Form</title>
+</head>
+<body>
+    <h1>Email Template Input</h1>
+    <form method="POST">
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Body (HTML allowed, use placeholders like {{ '{{ username' }}}}, {{ '{{ product' }}}}):</label><br>
+        <textarea name="body" rows="10" cols="50" required></textarea><br><br>
+
+        <button type="submit">Preview Email</button>
+    </form>
+</body>
+</html>

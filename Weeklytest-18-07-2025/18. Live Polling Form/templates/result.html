@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poll Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Thank you for voting!</h1>
+    
+    <p class="vote-message {% if choice == 'Yes' %}yes{% elif choice == 'No' %}no{% else %}maybe{% endif %}">
+        You voted: <strong>{{ choice }}</strong>
+    </p>
+
+    <a href="{{ url_for('poll') }}">Vote Again</a>
+</body>
+</html>

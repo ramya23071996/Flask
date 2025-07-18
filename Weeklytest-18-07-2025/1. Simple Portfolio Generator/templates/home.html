@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Portfolio</h1>
+        <form action="{{ url_for('submit') }}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="text" name="skills" placeholder="Your Skills" required><br>
+            <textarea name="bio" placeholder="Short Bio" required></textarea><br>
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+</html>

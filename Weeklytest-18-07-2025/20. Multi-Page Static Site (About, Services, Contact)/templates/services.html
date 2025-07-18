@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Our Services{% endblock %}
+{% block content %}
+<h2>Our Services</h2>
+<p>We provide the following:</p>
+<ul>
+    <li>Web Development</li>
+    <li>UI/UX Design</li>
+    <li>SEO Optimization</li>
+</ul>
+<img src="{{ url_for('static', filename='images/service.jpg') }}" alt="Services" width="300">
+{% endblock %}

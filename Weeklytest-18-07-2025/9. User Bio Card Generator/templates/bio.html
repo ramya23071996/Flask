@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Bio Card{% endblock %}
+{% block content %}
+    <h1>Your Bio Card</h1>
+    <div class="card">
+        <h2>{{ name }}</h2>
+        <p>Age: {{ age }}</p>
+        <h3>Hobbies:</h3>
+        <ul>
+            {% for hobby in hobbies %}
+                <li>{{ hobby }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+    <a href="{{ url_for('index') }}">Create Another</a>
+{% endblock %}

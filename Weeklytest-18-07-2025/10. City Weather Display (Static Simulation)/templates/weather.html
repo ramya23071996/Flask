@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather in {{ city }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .weather-card {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f0f0f0;
+            box-shadow: 0 0 10px #ccc;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-card">
+        <h1>Weather in {{ city }}</h1>
+        <p><strong>Temperature:</strong> {{ temperature }}° {{ 'C' if unit == 'celsius' else 'F' }}</p>
+        <p><strong>Condition:</strong> {{ condition.title() }}</p>
+        
+        {% if condition == 'sunny' %}
+            <img src="{{ url_for('static', filename='images/sunny.png') }}" alt="Sunny">
+        {% elif condition == 'cloudy' %}
+            <img src="{{ url_for('static', filename='images/cloudy.png') }}" alt="Cloudy">
+        {% elif condition == 'rainy' %}
+            <img src="{{ url_for('static', filename='images/rainy.png') }}" alt="Rainy">
+        {% else %}
+            <p>No image for this condition.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

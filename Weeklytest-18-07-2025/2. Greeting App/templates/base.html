@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('greet', name='Ramya', lang='en') }}">Greet Ramya</a>
+        <a href="{{ url_for('greet', name='Ramya', lang='fr') }}">Greet in French</a>
+        <a href="{{ url_for('greet', name='Ramya', lang='ta') }}">Greet in Tamil</a>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
