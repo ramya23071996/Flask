@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Projects - My Portfolio{% endblock %}
+{% block content %}
+<h2>Projects {% if tag %} (Filtered by: {{ tag }}) {% endif %}</h2>
+
+<div class="mb-3">
+  <a href="/projects" class="btn btn-outline-secondary btn-sm">All</a>
+  <a href="/projects?tag=web" class="btn btn-outline-secondary btn-sm">Web</a>
+  <a href="/projects?tag=ml" class="btn btn-outline-secondary btn-sm">ML</a>
+</div>
+
+<div class="row">
+  {% for project in projects %}
+  <div class="col-md-4 mb-3">
+    <div class="card h-100">
+      <img src="{{ url_for('static', filename='images/sample.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.description }}</p>
+        <a href="/project/{{ project.id }}" class="btn btn-primary">View</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
