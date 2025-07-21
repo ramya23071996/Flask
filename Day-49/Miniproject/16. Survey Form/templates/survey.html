@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <style>
+        .error-box {
+            background-color: #f8d7da;
+            color: #842029;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c2c7;
+        }
+        .flash-success {
+            background-color: #d1e7dd;
+            color: #0f5132;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #badbcc;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+        input.error, select.error, textarea.error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<h2>Survey Form</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <div class="flash-{{ category }}">{{ message }}</div>
+  {% endfor %}
+{% endwith %}
+
+{% if form.errors %}
+<div class="error-box">
+    Please correct the errors below before submitting the form.
+</div>
+{% endif %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <p>
+        {{ form.age.label }}<br>
+        {{ form.age(class_="error" if form.age.errors else "") }}<br>
+        {% for error in form.age.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.gender.label }}<br>
+        {% for subfield in form.gender %}
+            {{ subfield }} {{ subfield.label }}<br>
+        {% endfor %}
+        {% for error in form.gender.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.favorite_product.label }}<br>
+        {{ form.favorite_product(class_="error" if form.favorite_product.errors else "") }}<br>
+        {% for error in form.favorite_product.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.feedback.label }}<br>
+        {{ form.feedback(rows="4", cols="40", class_="error" if form.feedback.errors else "") }}<br>
+        {% for error in form.feedback.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>{{ form.submit() }}</p>
+</form>
+</body>
+</html>

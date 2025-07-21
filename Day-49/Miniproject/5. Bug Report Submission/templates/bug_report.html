@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug Report</title>
+    <style>
+        .flash-info {
+            background: #d1ecf1;
+            border: 1px solid #17a2b8;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #0c5460;
+        }
+        .flash-warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #856404;
+        }
+        .flash-danger {
+            background: #f8d7da;
+            border: 1px solid #dc3545;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #721c24;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Submit a Bug Report</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.name.label }}<br>
+           {{ form.name(size=40) }}<br>
+           {% for error in form.name.errors %}
+               <span class="error-message">{{ error }}</span><br>
+           {% endfor %}
+        </p>
+
+        <p>{{ form.email.label }}<br>
+           {{ form.email(size=40) }}<br>
+           {% for error in form.email.errors %}
+               <span class="error-message">{{ error }}</span><br>
+           {% endfor %}
+        </p>
+
+        <p>{{ form.description.label }}<br>
+           {{ form.description(rows=4, cols=50) }}<br>
+           {% for error in form.description.errors %}
+               <span class="error-message">{{ error }}</span><br>
+           {% endfor %}
+        </p>
+
+        <p>{{ form.severity.label }}<br>
+           {{ form.severity() }}<br>
+           {% for error in form.severity.errors %}
+               <span class="error-message">{{ error }}</span><br>
+           {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+
+</body>
+</html>

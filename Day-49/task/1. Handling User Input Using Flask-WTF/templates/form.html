@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head><title>User Info Form</title></head>
+<body>
+    <h2>Enter Your Details</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.name.label }} {{ form.name(size=32) }}</p>
+        <p>{{ form.email.label }} {{ form.email(size=32) }}</p>
+        <p>{{ form.message.label }} {{ form.message(rows=3, cols=40) }}</p>
+
+        <p>{{ form.gender.label }} {{ form.gender() }}</p>
+        <p>{{ form.country.label }} {{ form.country() }}</p>
+
+        <p>{{ form.accept_terms() }} {{ form.accept_terms.label }}</p>
+
+        <p>{{ form.password.label }} {{ form.password() }}</p>
+        <p>{{ form.confirm_password.label }} {{ form.confirm_password() }}</p>
+
+        <p>{{ form.comment.label }} {{ form.comment(rows=3, cols=40) }}</p>
+        <p>{{ form.birth_date.label }} {{ form.birth_date() }}</p>
+        <p>{{ form.lucky_number.label }} {{ form.lucky_number() }}</p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

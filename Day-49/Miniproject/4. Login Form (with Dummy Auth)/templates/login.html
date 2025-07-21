@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        .flash-success {
+            background-color: #d4edda;
+            border: 1px solid #28a745;
+            padding: 10px;
+            color: #155724;
+            margin-bottom: 10px;
+        }
+        .flash-error {
+            background-color: #f8d7da;
+            border: 1px solid #dc3545;
+            padding: 10px;
+            color: #721c24;
+            margin-bottom: 10px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.email.label }}<br>
+           {{ form.email(size=30) }}<br>
+           {% for error in form.email.errors %}
+               <span class="error-message">{{ error }}</span><br>
+           {% endfor %}
+        </p>
+
+        <p>{{ form.password.label }}<br>
+           {{ form.password(size=30) }}<br>
+           {% for error in form.password.errors %}
+               <span class="error-message">{{ error }}</span><br>
+           {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

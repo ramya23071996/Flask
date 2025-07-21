@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <style>
+        .error-message { color: red; font-size: 0.9em; }
+        .field-error input { border: 2px solid red; }
+        .flash-success { background: #d4edda; padding: 10px; border: 1px solid #28a745; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Register</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div class="{% if form.full_name.errors %}field-error{% endif %}">
+            {{ form.full_name.label }}<br>
+            {{ form.full_name(size=30) }}<br>
+            {% for error in form.full_name.errors %}
+                <span class="error-message">{{ error }}</span><br>
+            {% endfor %}
+        </div><br>
+
+        <div class="{% if form.email.errors %}field-error{% endif %}">
+            {{ form.email.label }}<br>
+            {{ form.email(size=30) }}<br>
+            {% for error in form.email.errors %}
+                <span class="error-message">{{ error }}</span><br>
+            {% endfor %}
+        </div><br>
+
+        <div class="{% if form.password.errors %}field-error{% endif %}">
+            {{ form.password.label }}<br>
+            {{ form.password(size=30) }}<br>
+            {% for error in form.password.errors %}
+                <span class="error-message">{{ error }}</span><br>
+            {% endfor %}
+        </div><br>
+
+        <div class="{% if form.confirm_password.errors %}field-error{% endif %}">
+            {{ form.confirm_password.label }}<br>
+            {{ form.confirm_password(size=30) }}<br>
+            {% for error in form.confirm_password.errors %}
+                <span class="error-message">{{ error }}</span><br>
+            {% endfor %}
+        </div><br>
+
+        {{ form.submit() }}
+    </form>
+</body>
+</html>

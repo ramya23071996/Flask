@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Support</title>
+    <style>
+        .flash-success {
+            background-color: #d1e7dd;
+            color: #0f5132;
+            padding: 10px;
+            border: 1px solid #badbcc;
+            margin-bottom: 15px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+        input.error, select.error, textarea.error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Customer Support Ticket</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <div class="flash-{{ category }}">{{ message }}</div>
+  {% endfor %}
+{% endwith %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(class_="error" if form.name.errors else "") }}<br>
+        {% for error in form.name.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(class_="error" if form.email.errors else "") }}<br>
+        {% for error in form.email.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.category.label }}<br>
+        {{ form.category(class_="error" if form.category.errors else "") }}<br>
+        {% for error in form.category.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.description.label }}<br>
+        {{ form.description(rows="5", cols="40", class_="error" if form.description.errors else "") }}<br>
+        {% for error in form.description.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>{{ form.submit() }}</p>
+</form>
+
+</body>
+</html>

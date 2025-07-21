@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Flash Messages</title>
+    <style>
+        .flash-success { background: #d4edda; padding: 10px; border: 1px solid #28a745; margin-bottom: 10px; }
+        .flash-error { background: #f8d7da; padding: 10px; border: 1px solid #dc3545; margin-bottom: 10px; }
+        .flash-warning { background: #fff3cd; padding: 10px; border: 1px solid #ffc107; margin-bottom: 10px; }
+        .flash-info { background: #d1ecf1; padding: 10px; border: 1px solid #17a2b8; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>User Form with Flash Messages</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.name.label }}<br>{{ form.name(size=30) }}</p>
+        <p>{{ form.email.label }}<br>{{ form.email(size=30) }}</p>
+        <p>{{ form.age.label }}<br>{{ form.age() }}</p>
+        <p>{{ form.password.label }}<br>{{ form.password() }}</p>
+        <p>{{ form.accept_terms() }} {{ form.accept_terms.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+</body>
+</html>

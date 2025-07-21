@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Form</title>
+    <style>
+        .error-list {
+            background-color: #f8d7da;
+            color: #842029;
+            padding: 10px;
+            border: 1px solid #f5c2c7;
+            margin-bottom: 15px;
+        }
+        .flash-success {
+            background-color: #d1e7dd;
+            color: #0f5132;
+            padding: 12px;
+            border: 1px solid #badbcc;
+            margin-bottom: 15px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+        input.error, textarea.error, select.error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Register a Complaint</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, msg in messages %}
+        <div class="flash-{{ category }}">{{ msg }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    {% if form.errors %}
+    <div class="error-list">
+        <strong>Please fix the following errors:</strong>
+        <ul>
+            {% for field_errors in form.errors.values() %}
+                {% for error in field_errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(class_="error" if form.name.errors else "") }}<br>
+        </p>
+
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(class_="error" if form.email.errors else "") }}<br>
+        </p>
+
+        <p>
+            {{ form.category.label }}<br>
+            {{ form.category(class_="error" if form.category.errors else "") }}<br>
+        </p>
+
+        <p>
+            {{ form.complaint.label }}<br>
+            {{ form.complaint(rows=4, class_="error" if form.complaint.errors else "") }}<br>
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

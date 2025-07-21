@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Newsletter Subscription</title>
+    <style>
+        .error-message { color: red; font-size: 0.9em; }
+        .flash-success { background: #d4edda; padding: 10px; border: 1px solid #28a745; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Subscribe to Our Newsletter</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.name.label }}<br>{{ form.name(size=30) }}</p>
+
+        <p>{{ form.email.label }}<br>
+           {{ form.email(size=30) }}<br>
+           {% for error in form.email.errors %}
+               <span class="error-message">{{ error }}</span><br>
+           {% endfor %}
+        </p>
+
+        <p>{{ form.frequency.label }}<br>{{ form.frequency() }}</p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Error Handling</title>
+    <style>
+        .error-summary {
+            background-color: #ffe6e6;
+            border: 1px solid red;
+            padding: 10px;
+            margin-bottom: 15px;
+            color: red;
+        }
+
+        .field-error input {
+            border: 2px solid red;
+        }
+
+        .field-error label {
+            color: red;
+        }
+
+        .field-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h2>User Info Form</h2>
+
+    {% if form.errors %}
+        <div class="error-summary">
+            <strong>Please correct the following errors:</strong>
+            <ul>
+                {% for field, errors in form.errors.items() %}
+                    {% for error in errors %}
+                        <li><strong>{{ field }}:</strong> {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div class="{% if form.name.errors %}field-error{% endif %}">
+            {{ form.name.label }}<br>
+            {{ form.name(size=30) }}<br>
+            {% for error in form.name.errors %}
+                <span class="field-message">{{ error }}</span><br>
+            {% endfor %}
+        </div><br>
+
+        <div class="{% if form.age.errors %}field-error{% endif %}">
+            {{ form.age.label }}<br>
+            {{ form.age() }}<br>
+            {% for error in form.age.errors %}
+                <span class="field-message">{{ error }}</span><br>
+            {% endfor %}
+        </div><br>
+
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
