@@ -1,0 +1,8 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.name.label }} {{ form.name(size=40) }}<br>
+  {{ form.price.label }} {{ form.price() }}<br>
+  {{ form.in_stock.label }} {{ form.in_stock() }}<br>
+  {{ form.description.label }} {{ form.description(rows=3, cols=40) }}<br>
+  {{ form.submit() }}
+</form>

@@ -1,0 +1,6 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.student_id.label }} {{ form.student_id() }}<br>
+  {{ form.course_id.label }} {{ form.course_id() }}<br>
+  {{ form.submit() }}
+</form>

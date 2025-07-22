@@ -1,0 +1,8 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.name.label }} {{ form.name(size=40) }}<br>
+  {{ form.email.label }} {{ form.email(size=40) }}<br>
+  {{ form.job_title.label }} {{ form.job_title(size=40) }}<br>
+  {{ form.status.label }} {{ form.status() }}<br>
+  {{ form.submit() }}
+</form>

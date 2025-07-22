@@ -1,0 +1,9 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <p>{{ form.name.label }} {{ form.name(size=40) }}</p>
+  <p>{{ form.message.label }} {{ form.message(rows=4, cols=40) }}</p>
+  {% if form.resolved %}
+    <p>{{ form.resolved.label }} {{ form.resolved() }}</p>
+  {% endif %}
+  <p>{{ form.submit() }}</p>
+</form>

@@ -1,0 +1,6 @@
+<h2>Vote Counts</h2>
+<ul>
+  {% for name, count in counts.items() %}
+    <li>{{ name }}: {{ count }} votes</li>
+  {% endfor %}
+</ul>

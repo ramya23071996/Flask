@@ -1,0 +1,12 @@
+<h2>Feedback Panel</h2>
+<a href="{{ url_for('submit_feedback') }}">+ Submit Feedback</a>
+<ul>
+  {% for f in feedbacks %}
+    <li>
+      <strong>{{ f.user_name }}</strong> – ⭐{{ f.rating }}<br>
+      {{ f.comment }}<br>
+      [<a href="{{ url_for('edit_feedback', id=f.id) }}">Edit</a> |
+       <a href="{{ url_for('delete_feedback', id=f.id) }}">Delete</a>]
+    </li>
+  {% endfor %}
+</ul>

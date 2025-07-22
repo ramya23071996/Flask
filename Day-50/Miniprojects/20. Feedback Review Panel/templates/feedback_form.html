@@ -1,0 +1,7 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <p>{{ form.user_name.label }} {{ form.user_name(size=40) }}</p>
+  <p>{{ form.rating.label }} {{ form.rating() }}</p>
+  <p>{{ form.comment.label }} {{ form.comment(rows=4, cols=50) }}</p>
+  <p>{{ form.submit() }}</p>
+</form>

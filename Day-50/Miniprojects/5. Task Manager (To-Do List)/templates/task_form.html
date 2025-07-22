@@ -1,0 +1,7 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.title.label }} {{ form.title(size=40) }}<br>
+  {{ form.due_date.label }} {{ form.due_date() }}<br>
+  {{ form.is_done.label }} {{ form.is_done() }}<br>
+  {{ form.submit() }}
+</form>

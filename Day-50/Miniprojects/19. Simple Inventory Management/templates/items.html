@@ -1,0 +1,11 @@
+<h2>Inventory</h2>
+<a href="{{ url_for('add_item') }}">+ Add Item</a>
+<ul>
+  {% for item in items %}
+    <li>
+      {{ item.name }}: {{ item.quantity }} (Last updated: {{ item.updated_on.strftime('%Y-%m-%d %H:%M') }})
+      [<a href="{{ url_for('edit_item', id=item.id) }}">Edit</a> |
+       <a href="{{ url_for('delete_item', id=item.id) }}">Delete</a>]
+    </li>
+  {% endfor %}
+</ul>

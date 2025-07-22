@@ -1,0 +1,7 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <p>{{ form.email.label }} {{ form.email(size=40) }}</p>
+  <p>{{ form.plan.label }} {{ form.plan() }}</p>
+  <p>{{ form.subscribed_on.label }} {{ form.subscribed_on() }}</p>
+  <p>{{ form.submit() }}</p>
+</form>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Expense</title>
+</head>
+<body>
+    <h2>Add Expense</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=40) }}
+        </p>
+        <p>
+            {{ form.amount.label }}<br>
+            {{ form.amount() }}
+        </p>
+        <p>
+            {{ form.category.label }}<br>
+            {{ form.category() }}
+        </p>
+        <p>
+            {{ form.date.label }}<br>
+            {{ form.date() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

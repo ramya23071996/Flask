@@ -1,0 +1,6 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <p>{{ form.name.label }} {{ form.name(size=40) }}</p>
+  <p>{{ form.quantity.label }} {{ form.quantity() }}</p>
+  <p>{{ form.submit() }}</p>
+</form>
