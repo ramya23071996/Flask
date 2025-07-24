@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}My Tasks{% endblock %}
+{% block content %}
+  <h2>Your Tasks</h2>
+  {% if tasks %}
+    <ul>
+      {% for task in tasks %}
+        <li>
+          <strong>{{ task.title }}</strong> - Due: {{ task.due_date }}
+          {% if task.is_complete %} ✅ {% endif %}
+          <a href="{{ url_for('main.edit_task', id=task.id) }}">Edit</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tasks yet. <a href="{{ url_for('main.new_task') }}">Add one</a>.</p>
+  {% endif %}
+{% endblock %}

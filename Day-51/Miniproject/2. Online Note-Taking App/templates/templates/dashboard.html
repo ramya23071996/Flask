@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Your Notes</h2>
+{% if notes %}
+    <ul>
+    {% for note in notes %}
+        <li>
+            <strong>{{ note.title }}</strong><br>
+            {{ note.content }}<br>
+            <a href="{{ url_for('edit_note', id=note.id) }}">Edit</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No notes yet. <a href="{{ url_for('new_note') }}">Create one</a>.</p>
+{% endif %}
+{% endblock %}

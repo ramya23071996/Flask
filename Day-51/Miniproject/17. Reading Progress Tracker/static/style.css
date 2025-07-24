@@ -1,0 +1,21 @@
+body {
+    background: #f0f0f0;
+    font-family: Arial;
+}
+.wrapper {
+    background: #fff;
+    padding: 20px;
+    margin: auto;
+    width: 400px;
+    border-radius: 8px;
+}
+input {
+    margin: 8px 0;
+    width: 100%;
+}
+.flash {
+    background: #d4f8d4;
+    color: #065f0d;
+    padding: 10px;
+    border-radius: 5px;
+}

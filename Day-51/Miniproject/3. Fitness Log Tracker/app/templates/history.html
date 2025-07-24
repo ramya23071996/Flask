@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Workout History{% endblock %}
+{% block content %}
+  <h2>Workout History</h2>
+  <ul>
+    {% for log in logs %}
+      <li>{{ log.date }} - {{ log.workout_type }}: {{ log.duration }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

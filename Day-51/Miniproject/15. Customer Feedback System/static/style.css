@@ -1,0 +1,17 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+}
+
+h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+.alert {
+  transition: all 0.3s ease;
+}
+
+.list-group-item {
+  font-size: 1rem;
+}

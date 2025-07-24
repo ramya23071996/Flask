@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+}
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    margin: auto;
+}
+input, textarea {
+    width: 100%;
+    margin: 10px 0;
+}
+#flash-msg {
+    background: #c5f6c7;
+    color: #064b07;
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Applications</h2>
+<ul>
+  {% for app in apps %}
+    <li><strong>{{ app.job_title }}</strong> - {{ app.details }}</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('main.apply') }}">Apply for Another Job</a>
+{% endblock %}

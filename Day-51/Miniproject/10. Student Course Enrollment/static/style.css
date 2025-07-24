@@ -1,0 +1,21 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.list-group-item {
+  font-size: 1rem;
+}
+
+.alert {
+  transition: all 0.3s ease;
+}

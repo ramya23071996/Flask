@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>RSVP to Event</h2>
+<form method="POST">
+  <input type="text" name="event_name" placeholder="Event Name"><br>
+  <select name="status">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+    <option value="Maybe">Maybe</option>
+  </select><br>
+  <input type="submit" value="Submit RSVP">
+</form>
+{% endblock %}

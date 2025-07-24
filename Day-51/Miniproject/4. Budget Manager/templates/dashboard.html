@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ current_user.username }}!</h2>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.amount.label }} {{ form.amount() }}<br>
+    {{ form.category.label }} {{ form.category() }}<br>
+    {{ form.submit() }}
+</form>
+
+<h3>Set Monthly Limit</h3>
+<form method="POST">
+    {{ limit_form.hidden_tag() }}
+    {{ limit_form.limit.label }} {{ limit_form.limit() }}<br>
+    {{ limit_form.submit() }}
+</form>
+
+<h3>Current Monthly Limit: ₹{{ limit }}</h3>
+<h3>Total Spent: ₹{{ total }}</h3>
+
+<h4>Expenses:</h4>
+<ul>
+{% for e in expenses %}
+    <li>₹{{ e.amount }} - {{ e.category }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

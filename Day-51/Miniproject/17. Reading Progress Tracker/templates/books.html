@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Books</h2>
+{% if last_viewed %}
+  <p><strong>Last viewed:</strong> {{ last_viewed }}</p>
+{% endif %}
+<ul>
+  {% for book in books %}
+    <li>
+      {{ book.title }} — {{ book.pages_read }}/{{ book.total_pages }} pages ({{ book.progress() }}%)
+    </li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('bp.add_book') }}">Add New Book</a>
+<br><br>
+<a href="{{ url_for('bp.logout') }}">Logout</a>
+{% endblock %}

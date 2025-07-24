@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}New Note{% endblock %}
+{% block content %}
+<h2>New Note</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.title.label }} {{ form.title(size=64) }}<br>
+    {{ form.content.label }} {{ form.content(rows=5, cols=50) }}<br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

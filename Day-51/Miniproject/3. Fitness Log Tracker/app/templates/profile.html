@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Update Profile{% endblock %}
+{% block content %}
+  <h2>Update Password</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.current_password.label }} {{ form.current_password }}<br>
+    {{ form.new_password.label }} {{ form.new_password }}<br>
+    {{ form.confirm_new_password.label }} {{ form.confirm_new_password }}<br>
+    {{ form.submit }}
+  </form>
+{% endblock %}

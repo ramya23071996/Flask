@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h2>Welcome {{ current_user.email }}</h2>
+  {% if last %}
+    <p>Last workout type: {{ last }}</p>
+  {% endif %}
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.workout_type.label }} {{ form.workout_type }}<br>
+    {{ form.duration.label }} {{ form.duration }}<br>
+    {{ form.submit }}
+  </form>
+{% endblock %}
