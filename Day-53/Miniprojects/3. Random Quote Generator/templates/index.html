@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card text-center">
+  <div class="card-header">💡 Quote of the Moment</div>
+  <div class="card-body">
+    <p id="quoteText" class="card-text">Click the button to generate a random quote.</p>
+    <div id="loadingSpinner" class="spinner-border text-primary d-none" role="status"></div>
+    <button id="getQuoteBtn" class="btn btn-primary mt-3">Get New Quote</button>
+  </div>
+</div>
+{% endblock %}

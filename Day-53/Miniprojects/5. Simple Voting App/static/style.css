@@ -1,0 +1,14 @@
+body {
+  background: #f5f8fa;
+}
+
+.candidate-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.progress-bar {
+  transition: width 0.5s ease-in-out;
+}

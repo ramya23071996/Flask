@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form id="feedback-form" class="mb-4">
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Your Name" id="name" required>
+  </div>
+  <div class="mb-3">
+    <textarea class="form-control" placeholder="Your Feedback" id="message" rows="3" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div id="alert-area"></div>
+
+<h5>Submitted Feedback:</h5>
+<ul id="feedback-list" class="list-group"></ul>
+{% endblock %}

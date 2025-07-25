@@ -1,0 +1,16 @@
+body {
+  background-color: #3b83ca;
+}
+
+h3 {
+  margin-top: 50px;
+}
+
+.badge {
+  font-size: 1.2em;
+  padding: 10px 15px;
+}
+
+.alert {
+  transition: opacity 0.5s ease-in-out;
+}

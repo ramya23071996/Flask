@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voting App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">🏆 Cast Your Vote</h1>
+    <div id="vote-list" class="mb-5">
+      {% for name in candidates %}
+        <div class="mb-3 candidate-card">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold fs-5">{{ name }}</span>
+            <button class="btn btn-primary vote-btn" data-name="{{ name }}">Vote</button>
+          </div>
+          <div class="progress mt-2">
+            <div id="bar-{{ name }}" class="progress-bar" style="width: 0%">0</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".vote-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const candidate = btn.dataset.name;
+        fetch("/api/vote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ candidate }),
+        })
+        .then(res => res.json())
+        .then(() => updateResults());
+      });
+    });
+
+    function updateResults() {
+      fetch("/api/results")
+        .then(res => res.json())
+        .then(data => {
+          const totalVotes = Object.values(data).reduce((a, b) => a + b, 0);
+          for (const [name, count] of Object.entries(data)) {
+            const percent = totalVotes ? Math.round((count / totalVotes) * 100) : 0;
+            const bar = document.getElementById(`bar-${name}`);
+            bar.style.width = `${percent}%`;
+            bar.textContent = `${count} votes (${percent}%)`;
+          }
+        });
+    }
+
+    // Initial fetch
+    updateResults();
+  </script>
+</body>
+</html>

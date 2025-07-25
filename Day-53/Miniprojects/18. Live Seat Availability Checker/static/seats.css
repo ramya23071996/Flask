@@ -1,0 +1,10 @@
+.seat-btn {
+  width: 80px;
+  height: 50px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.seat-btn:hover {
+  transform: scale(1.05);
+}

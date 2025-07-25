@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News Feed Reader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='news.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+  <h2>🗞️ Top Headlines: {{ category }}</h2>
+
+  <div class="form-group mb-3">
+    <select id="category-select" class="form-select">
+      {% for cat in ['Technology', 'Sports'] %}
+        <option value="{{ cat }}" {% if cat == category %}selected{% endif %}>{{ cat }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div id="loading" class="text-primary fw-bold mb-2">Loading...</div>
+
+  <div class="accordion" id="newsAccordion"></div>
+
+  <script src="{{ url_for('static', filename='news.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+  <h3>
+    👥 Users Online:
+    <span id="userCountBadge" class="badge bg-success">{{ initial_count }}</span>
+  </h3>
+  <div id="flashAlert" class="alert alert-info d-none mt-3" role="alert">
+    🎉 New user joined! Count incremented.
+  </div>
+</div>
+{% endblock %}

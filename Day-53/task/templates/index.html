@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>🕒 Server Time</h2>
+<div id="server-time" class="mb-3"></div>
+<button class="btn btn-info" onclick="loadTime()">Refresh Time</button>
+
+<h2>👥 Users</h2>
+<table class="table" id="user-table"></table>
+<div class="mb-3">
+  <span class="badge bg-success">Count: <span id="user-count"></span></span>
+</div>
+
+<h2>🛍️ Products</h2>
+<div class="row" id="product-grid"></div>
+<button class="btn btn-secondary mt-2" onclick="loadProducts()">Load More</button>
+
+<h2>📈 Status Chart</h2>
+<canvas id="statusChart" height="100"></canvas>
+
+<h2>🎯 Search</h2>
+<input type="text" id="live-search" class="form-control" placeholder="Live search users">
+<ul id="search-results" class="mt-2"></ul>
+
+<script>
+  const apiUsersUrl = "{{ url_for('users_api') }}";
+  const userId = { user_id };
+</script>
+
+{% endblock %}

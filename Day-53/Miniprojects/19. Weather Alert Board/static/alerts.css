@@ -1,0 +1,9 @@
+body {
+  background: linear-gradient(to right, #e0f7fa, #fffde7);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.alert {
+  border-left: 6px solid #f39c12;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

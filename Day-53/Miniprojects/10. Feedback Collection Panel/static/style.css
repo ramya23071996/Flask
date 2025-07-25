@@ -1,0 +1,12 @@
+body {
+  background-color: #e6712e;
+}
+
+form input, form textarea {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#feedback-list li {
+  background-color: #982ea1;
+  margin-bottom: 4px;
+}

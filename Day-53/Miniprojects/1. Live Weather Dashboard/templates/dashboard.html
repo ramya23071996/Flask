@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="mb-4">{{ title }}</h1>
+<h4 class="text-muted">Location: {{ location }}</h4>
+
+<div class="card mt-4">
+  <div class="card-header">Current Weather</div>
+  <div class="card-body" id="weather-content">
+    <div class="spinner-border text-primary" role="status" id="loading-spinner">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
